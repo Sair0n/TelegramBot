@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Services\TelegramBot;
 
 class TelegramBotServiceProvider extends ServiceProvider
 {
@@ -14,7 +15,7 @@ class TelegramBotServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('tgbot', function(){
-           // return new TelegramBot(config('telegram.bot'), config('telegram.admin_id'));
+           return new TelegramBot(config('telegram.bot'), config('telegram.admin_id'));
         });
     }
 
