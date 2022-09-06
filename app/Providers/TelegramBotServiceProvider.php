@@ -13,7 +13,9 @@ class TelegramBotServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind('tgbot', function(){
+           // return new TelegramBot(config('telegram.bot'), config('telegram.admin_id'));
+        });
     }
 
     /**
